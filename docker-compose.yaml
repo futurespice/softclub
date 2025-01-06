@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: sh -c "chmod +x /app/entrypoint.sh && /app/entrypoint.sh"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+      - DB_NAME=softclub
+      - DB_USER=1c
+      - DB_PASSWORD=12345678
+      - DB_HOST=db
+      - DB_PORT=5432
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=softclub
+      - POSTGRES_USER=1c
+      - POSTGRES_PASSWORD=12345678
+    ports:
+      - "5433:5432"
+    restart: always
+
+volumes:
+  postgres_data:
