@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-677#jaqe4k32wf%0&qfe_d$vlpvfs8n(k75@ex5xx&e9(j@lgt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'osh-photo.com',
+    'www.osh-photo.com'
+]
 
 # Application definition
 
