@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME', 'softclub'),
         'USER': os.environ.get('DB_USER', '1c'),
         'PASSWORD': os.environ.get('DB_PASSWORD', '12345678'),
-        'HOST': os.environ.get('DB_HOST', 'db'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
